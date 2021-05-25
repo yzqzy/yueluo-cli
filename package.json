@@ -1,0 +1,26 @@
+{
+  "name": "yueluo-cli",
+  "version": "1.2.0",
+  "description": "脚手架工具。",
+  "main": "src/index.js",
+  "bin": {
+    "yueluo-cli": "./bin/www"
+  },
+  "keywords": [
+    "脚手架工具",
+    "个人"
+  ],
+  "author": "月落",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "adm-zip": "^0.5.1",
+    "axios": "^0.21.1",
+    "commander": "^6.2.1",
+    "consolidate": "^0.16.0",
+    "ejs": "^3.1.5",
+    "inquirer": "^7.3.3",
+    "metalsmith": "^2.3.0",
+    "ncp": "^2.0.0",
+    "ora": "^5.1.0"
+  }
+}
