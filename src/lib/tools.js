@@ -4,9 +4,6 @@
  * @author 月落 <yueluo.yang@qq.com>
  */
 
-/**
- * @requires ora - loading 效果库
- */
 const ora = require('ora');
 
 /**
@@ -21,8 +18,8 @@ const waitFnWithLoading = (fn, desc) => async (...agrs) => {
   const reops = await fn(...agrs);
   spinner.succeed();
   return reops;
-}
+};
 
 module.exports = {
   waitFnWithLoading
-}
+};

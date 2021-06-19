@@ -4,12 +4,8 @@
  * @author 月落 <yueluo.yang@qq.com>
  */
 
-/**
- * @requires src/config/config 全局配置文件
- * @requires path 路径处理模块
- * @requires commander 命令行解决方案
- */
-const { COMMAND_CONFIG, VERSION } = require('./config/config');
+const { VERSION } = require('./config/config');
+const { COMMAND_CONFIG } = require('./config/command');
 const path = require('path');
 const { program } = require('commander');
 

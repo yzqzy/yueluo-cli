@@ -4,14 +4,6 @@
  * @author 月落 <yueluo.yang@qq.com>
  */
 
-/**
- * @requires path 路径处理模块
- * @requires fs - 文件处理模块
- * @requires ncp - 文件夹复制
- * @requires consolidate - 模板引擎库
- * @requires inquirer - 命令行美化工具
- * @requires metalsmith - 静态站点生成器
- */
 const path = require('path');
 const fs = require('fs');
 const ncp = require('ncp').ncp;
@@ -19,23 +11,17 @@ const { render } = require('consolidate').ejs;
 const Inquirer = require('inquirer');
 const Metalsmith = require('metalsmith');
 
-/**
- * @requires src/lib/tools - 工具函数
- * @requires src/service/repos - 脚手架模板业务
- * @requires src/config/config - 全局配置文件
- */
+const { REOPS_CONFIG } = require('../config/reops');
 const { waitFnWithLoading } = require('../lib/tools');
-const { getCliRepos, getCliRepoTags, downCliGiteeRepo } = require('../services/repos');
+const { downCliRepo } = require('../services/reops');
 
 module.exports = async (projectName) => {
-  let repos = await waitFnWithLoading(getCliRepos, 'request templates...')();
-
-  if (!Array.isArray(repos)) {
+  if (!Array.isArray(REOPS_CONFIG)) {
     console.log('the repos is not array');
     return;
   }
 
-  repos = repos.map(repo => repo.name);
+  const repos = REOPS_CONFIG.map(repo => repo.name);
 
   // 选择模板
   const { repo } = await Inquirer.prompt({
@@ -45,26 +31,8 @@ module.exports = async (projectName) => {
     choices: repos
   });
 
-  let tags = await waitFnWithLoading(getCliRepoTags, 'request template tags...')(repo);
-
-  
-  if (!Array.isArray(tags)) {
-    console.log('the tags is not array');
-    return;
-  }
-
-  tags = tags.map(tag => tag.name);
-
-  // 选择模板版本号
-  const { tag } = await Inquirer.prompt({
-    name: 'tag',
-    type: 'list',
-    message: 'Choose a template tag to create your project',
-    choices: tags
-  });
-
   // 下载模板到本地
-  const dest = await waitFnWithLoading(downCliGiteeRepo, 'download teamplate source...')(repo, tag);
+  const dest = await waitFnWithLoading(downCliRepo, 'download teamplate source...')(repo);
 
   // 判断是否存在文件
   const questionDest = path.join(dest, 'question.json');
@@ -117,4 +85,4 @@ module.exports = async (projectName) => {
   }
 
   console.log('success!');
-}
+};

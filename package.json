@@ -13,7 +13,6 @@
   "author": "月落",
   "license": "Apache-2.0",
   "dependencies": {
-    "adm-zip": "^0.5.1",
     "axios": "^0.21.1",
     "commander": "^6.2.1",
     "consolidate": "^0.16.0",
