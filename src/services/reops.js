@@ -7,7 +7,10 @@
 const { BASE_PREFIX, DOWNLOAD_DEST } = require('../config/config');
 const fs = require('fs');
 const path = require('path');
-const { exec } = require('child_process');
+const { promisify } = require('util');
+let { exec } = require('child_process');
+
+exec = promisify(exec);
 
 /**
 * @description 下载模板仓库

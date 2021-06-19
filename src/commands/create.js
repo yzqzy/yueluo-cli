@@ -6,7 +6,7 @@
 
 const path = require('path');
 const fs = require('fs');
-const ncp = require('ncp').ncp;
+const { ncp } = require('ncp');
 const { render } = require('consolidate').ejs;
 const Inquirer = require('inquirer');
 const Metalsmith = require('metalsmith');
@@ -14,6 +14,7 @@ const Metalsmith = require('metalsmith');
 const { REOPS_CONFIG } = require('../config/reops');
 const { waitFnWithLoading } = require('../lib/tools');
 const { downCliRepo } = require('../services/reops');
+const cons = require('consolidate');
 
 module.exports = async (projectName) => {
   if (!Array.isArray(REOPS_CONFIG)) {
