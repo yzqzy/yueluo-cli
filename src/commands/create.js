@@ -60,6 +60,10 @@ module.exports = async (projectName) => {
         .use((files, metal, done) => {
           const metadata = metal.metadata();
 
+          Object.assign(metadata, {
+            name: projectName
+          });
+
           Reflect.ownKeys(files).forEach(async file => {
             if (file.includes('js') || file.includes('json')) {
               const regex = /<%=(.*?)%>/g;
