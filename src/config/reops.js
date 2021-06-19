@@ -8,7 +8,8 @@ const { BASE_PREFIX } = require('./config');
 
 const REPOS = [
   'webpack4-template',
-  'koa2-template'
+  'koa2-template',
+  'tars-server-template'
 ];
 
 /**
