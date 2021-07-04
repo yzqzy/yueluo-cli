@@ -26,6 +26,10 @@ const downCliRepo = async (repo) => {
       if (!fs.existsSync(DOWNLOAD_DEST)) {
         await exec(`mkdir ${DOWNLOAD_DEST}`);
       }
+      if (fs.existsSync(download_dest)) {
+        resolve(download_dest);
+        return;
+      }
       
       await exec(`git clone ${browser_git_url}`, { cwd: DOWNLOAD_DEST });
       await exec(`rm -rf ${download_dest}/.git`);
