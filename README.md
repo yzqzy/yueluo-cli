@@ -6,8 +6,9 @@
 
 目前包括以下脚手架模板：
 
-* webpack4 ES6 开发基础模板
-* koa2 开发基础模板
+* webpack4 ES6 开发模板
+* koa2 开发模板
+* Tars HTTP 服务开发模板
 
 ### 安装
 
