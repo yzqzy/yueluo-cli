@@ -5,6 +5,7 @@
  */
 
 const ora = require('ora');
+const rimraf = require('rimraf');
 
 /**
  * @description 等待函数
@@ -20,6 +21,16 @@ const waitFnWithLoading = (fn, desc) => async (...agrs) => {
   return reops;
 };
 
+/**
+ * @description 删除文件夹
+ * @param {string} path - 指定路径 
+ * @returns 
+ */
+const deleteFolder = (path) => {
+  return new Promise((resolve) => rimraf(path, {}, resolve));
+}
+
 module.exports = {
-  waitFnWithLoading
+  waitFnWithLoading,
+  deleteFolder
 };

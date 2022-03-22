@@ -7,9 +7,9 @@
 const { BASE_PREFIX } = require('./config');
 
 const REPOS = [
-  'webpack4-template',
-  'koa2-template',
-  'tars-server-template'
+  'electron-react-starter',
+  'nuxt3-ssr-starter',
+  'vite-vue3-starter'
 ];
 
 /**

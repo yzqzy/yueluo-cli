@@ -8,6 +8,8 @@ const { BASE_PREFIX, DOWNLOAD_DEST } = require('../config/config');
 const fs = require('fs');
 const path = require('path');
 const { promisify } = require('util');
+const { deleteFolder } = require('../lib/tools');
+
 let { exec } = require('child_process');
 
 exec = promisify(exec);
@@ -32,7 +34,7 @@ const downCliRepo = async (repo) => {
       }
       
       await exec(`git clone ${browser_git_url}`, { cwd: DOWNLOAD_DEST });
-      await exec(`rm -rf ${download_dest}/.git`);
+      await deleteFolder(path.join(download_dest, '/.git'));
 
       resolve(download_dest);
     } catch (error) {

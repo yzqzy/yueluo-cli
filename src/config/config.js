@@ -13,13 +13,12 @@ const { version: VERSION } = require('../../package.json');
  * @constant {string} DOMAIN_CONFIG - 请求域名
  * @constant {string} ORG_CONFIG - 组织名称
  */
-const DOMAIN_CONFIG = 'https://git.yueluo.club/';
-const ORG_CONFIG = 'templates/';
+const DOMAIN_CONFIG = 'https://github.com/yw0525/';
 
 /**
  * @constant {string} BASE_PREFIX - 请求前缀
  */
-const BASE_PREFIX = `${DOMAIN_CONFIG}${ORG_CONFIG}`;
+const BASE_PREFIX = `${DOMAIN_CONFIG}`;
 
 /**
  * @constant {string} DOWNLOAD_DEST - 模板本地存储地址
