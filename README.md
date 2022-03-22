@@ -6,9 +6,9 @@
 
 目前包括以下脚手架模板：
 
-* electron-react 开发模板
-* nuxt3-ssr 开发模板
-* vite-vue3 开发模板
+* electron-react-starter 开发模板
+* nuxt3-ssr-starter 开发模板
+* vite-vue3-starter 开发模板
 
 ### 安装
 
