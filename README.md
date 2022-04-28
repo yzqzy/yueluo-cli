@@ -9,6 +9,7 @@
 * electron-react-starter 开发模板
 * nuxt3-ssr-starter 开发模板
 * vite-vue3-starter 开发模板
+* nest-server-starter 开发模板
 
 ### 安装
 
