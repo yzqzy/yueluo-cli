@@ -1,10 +1,13 @@
 {
   "name": "yueluo-cli",
   "version": "2.0.4",
-  "description": "脚手架工具。",
+  "description": "个人脚手架工具。",
   "main": "src/index.js",
   "bin": {
     "yueluo-cli": "./bin/www"
+  },
+  "scripts": {
+    "release": "sh build/release.sh"
   },
   "repository": {
     "type": "git",
