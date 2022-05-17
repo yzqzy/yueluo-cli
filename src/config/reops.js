@@ -7,9 +7,10 @@
 const { BASE_PREFIX } = require('./config');
 
 const REPOS = [
-  'electron-react-starter',
-  'nuxt3-ssr-starter',
   'vite-vue3-starter',
+  'vite-vue3-components-starter',
+  'nuxt3-ssr-starter',
+  'electron-react-starter',
   'nest-server-starter'
 ];
 
