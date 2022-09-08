@@ -1,17 +1,17 @@
 {
   "name": "yueluo-cli",
   "version": "2.0.5",
-  "description": "个人脚手架工具。",
+  "description": "脚手架工具",
   "main": "src/index.js",
   "bin": {
-    "yueluo-cli": "./bin/www"
+    "yueluo-cli": "bin/www"
   },
   "scripts": {
     "release": "sh build/release.sh"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/yw0525/yueluo-cli"
+    "url": "git+https://github.com/yw0525/yueluo-cli.git"
   },
   "keywords": [
     "脚手架工具",
@@ -20,14 +20,12 @@
   "author": "月落",
   "license": "MIT",
   "dependencies": {
-    "axios": "^0.21.1",
     "commander": "^6.2.1",
-    "consolidate": "^0.16.0",
-    "ejs": "^3.1.5",
     "inquirer": "^7.3.3",
-    "metalsmith": "^2.3.0",
-    "ncp": "^2.0.0",
-    "ora": "^5.1.0",
-    "rimraf": "^3.0.2"
-  }
+    "ora": "^5.1.0"
+  },
+  "bugs": {
+    "url": "https://github.com/yw0525/yueluo-cli/issues"
+  },
+  "homepage": "https://github.com/yw0525/yueluo-cli#readme"
 }
